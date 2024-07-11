@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='feather-icon/css/feather.css') }}">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Criar Treino</title>
+</head>
+
+<header>
+    <div class="navbar">
+        <ul class="ul-desktop">
+            <li><a href="{{ url_for('dashboard') }}"><i class="feather icon-home"></i></a></li>
+            <li><a href="{{ url_for('criar_treino') }}">Treino</a></li>
+            <li><a href="{{ url_for('evolucao') }}">Evolução</a></li>
+            <li><a href="{{ url_for('desafios') }}">Desafios</a></li>
+            <li><a href="{{ url_for('profile') }}">Perfil</a></li>
+            <li><a href="{{ url_for('logout') }}"><i class="feather icon-log-out"></i></a></li>
+        </ul>
+        <ul class="ul-mobile">
+            <li><a href="{{ url_for('dashboard') }}"><i class="feather icon-home"></i></a></li>
+            <li><a href="{{ url_for('logout') }}"><i class="feather icon-log-out"></i></a></li>
+        </ul>
+    </div>
+</header>
+
+<body>
+    <div class="perguntas">
+        <h6>Crie seu treino personalizado</h6>
+        <div class="perguntas-frequentes">
+            <form action="{{ url_for('criar_treino') }}" method="POST">
+                {% for category, exercises in trainings.items() %}
+                <details class="accordion-details">
+                    <summary class="accordion-summary feather d-flex">
+                        <p class="text-lg semibold text-start"><i class="feather icon-box strong-cereja semibold"></i>{{ category }}</p>
+                    </summary>
+                    <div class="details-content asfalto-400">
+                        {% for exercise in exercises %}
+                        <label><input type="checkbox" name="{{ category }}" value="{{ exercise }}"> {{ exercise }}</label>
+                        {% endfor %}
+                    </div>
+                </details>
+                <div class="linha"></div>
+                {% endfor %}
+                <button class="btn-cereja">Criar Treino</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+<footer style="position: fixed;">
+    <h6 class="color-white">Fale com um de nossos profissionais</h6>
+    <div class="grid-profissionais">
+        <div class="profissional">
+            <h6><a class="text-green" href="https://wa.me/5551998786274?text=Olá%20Julio%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20treinos." target="_blank">Julio Balestrin</a></h6>
+        </div>
+        <div class="profissional">
+            <h6><a class="text-green" href="https://wa.me/5551998786274?text=Olá%20Renato%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20treinos." target="_blank">Renato Cariri</a></h6>
+        </div>
+        <div class="profissional">
+            <h6><a class="text-green" href="https://wa.me/5551998786274?text=Olá%20Jorlan%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20treinos." target="_blank">Jorlan all day</a></h6>
+        </div>
+        <div class="profissional">
+            <h6><a class="text-green" href="https://wa.me/5551998786274?text=Olá%20Paulo%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20treinos." target="_blank">Paulo Muzy</a></h6>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const detailsElements = document.querySelectorAll('details.accordion-details');
+            detailsElements.forEach(details => {
+                details.addEventListener('toggle', (event) => {
+                    if (details.open) {
+                        detailsElements.forEach(otherDetails => {
+                            if (otherDetails !== details) {
+                                otherDetails.removeAttribute('open');
+                            }
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</footer>
+
+</html>

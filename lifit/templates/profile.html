@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/feather-icon/css/feather.css">
+
+    <title>Perfil</title>
+</head>
+
+<header>
+    <div class="navbar">
+        <ul class="ul-desktop">
+            <li><a href="{{ url_for('dashboard') }}"><i class="feather icon-home"></i></a></li>
+            <li><a href="{{ url_for('criar_treino') }}">Treino</a></li>
+            <li><a href="{{ url_for('evolucao') }}">Evolução</a></li>
+            <li><a href="{{ url_for('desafios') }}">Desafios</a></li>
+            <li><a href="{{ url_for('profile') }}">Perfil</a></li>
+            <li><a href="{{ url_for('logout') }}"><i class="feather icon-log-out"></i></a></li>
+
+        </ul>
+        <ul class="ul-mobile">
+            <li><a href="{{ url_for('logout') }}"><i class="feather icon-home"></i></a></li>
+            <li><a href="{{ url_for('logout') }}"><i class="feather icon-log-out"></i></a></li>
+
+        </ul>
+    </div>
+</header>
+
+<body class="body-profile" style="background-color: rgba(169, 169, 169, 0.533);">
+    <div class="container-perfil">
+        <div class="input-container-perfil">
+            <h6>Formulário de Perfil</h6>
+            <form id="profileForm" method="POST" enctype="multipart/form-data">
+                <p><i class="feather icon-user"></i> Nome Completo:</p>
+                <input type="text" class="form-control" id="name" name="name" value="{{ user[1] }}">
+                <p><i class="feather icon-mail"></i>Email:</p>
+                <input type="text" class="form-control" id="email" name="email" value="{{ user[2] }}">
+                <p><i class="feather icon-activity"></i>Peso (kg):</p>
+                <input type="text" class="form-control" id="peso" name="peso" value="{{ user[4] }}">
+                <p><i class="feather icon-arrow-up"></i>Altura (cm):</p>
+                <input type="text" id="peso" class="form-control" name="altura" value="{{ user[5] }}">
+                <p><i class="feather icon-bar-chart"></i>Idade:</p>
+                <input type="text" id="peso" class="form-control" name="idade" value="{{ user[6] }}">
+                <p><i class="feather icon-refresh-cw"></i>Tipo Sanguíneo: (cm):</p>
+                <input type="text" id="peso" class="form-control" name="tipo_sanguineo" maxlength="3" value="{{ user[7] }}">
+                <h6>Medidas Corporais Atuais</h6>
+                <p><i class="feather icon-refresh-cw"></i>Bíceps (cm):</p>
+                <input type="text" id="medida_biceps" class="form-control" name="medida_biceps" value="{{ user[8] }}">
+                <p><i class="feather icon-refresh-cw"></i>Cintura (cm):</p>
+                <input type="text" id="medida_cintura" class="form-control" name="medida_cintura" value="{{ user[9] }}">
+                <p><i class="feather icon-refresh-cw"></i>Panturrilhas (cm):</p>
+                <input type="text" id="medida_panturrilhas" class="form-control" name="medida_panturrilhas" value="{{ user[10] }}">
+                <p><i class="feather icon-refresh-cw"></i>Ombros (cm):</p>
+                <input type="text" id="medida_ombros" class="form-control" name="medida_ombros" value="{{ user[11] }}">
+                <button class="btn-atualizar-form" type="submit">Atualizar</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+<footer>
+    <h6 class="color-white">Fale com um de nossos profissionais</h5>
+        <div class="grid-profissionais">
+            <div class="profissional">
+                <h6>
+                    <a class="text-green"
+                        href="https://wa.me/5551998786274?text=Olá%20Julio%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20treinos."
+                        target="_blank">
+                        Julio Balestrin
+                    </a>
+                </h6>
+            </div>
+            <div class="profissional">
+                <h6>
+                    <a class="text-green"
+                        href="https://wa.me/5551998786274?text=Olá%20Renato%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20treinos."
+                        target="_blank">
+                        Renato Cariri
+                    </a>
+                </h6>
+            </div>
+            <div class="profissional">
+                <h6>
+                    <a class="text-green"
+                        href="https://wa.me/5551998786274?text=Olá%20Jorlan%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20treinos."
+                        target="_blank">
+                        Jorlan all day
+                    </a>
+                </h6>
+            </div>
+            <div class="profissional">
+                <h6>
+                    <a class="text-green"
+                        href="https://wa.me/5551998786274?text=Olá%20Paulo%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20treinos."
+                        target="_blank">
+                        Paulo Muzy
+                    </a>
+                </h6>
+            </div>
+        </div>
+</footer>
+
+</html>

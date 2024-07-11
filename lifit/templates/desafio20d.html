@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/feather-icon/css/feather.css">
+    <link rel="icon" href="/static/imgs/favicon.png" type="image/x-icon">
+    <title>Document</title>
+</head>
+<header>
+    <div class="navbar">
+        <ul class="ul-desktop">
+            <li><a href="{{ url_for('dashboard') }}"><i class="feather icon-home"></i></a></li>
+            <li><a href="{{ url_for('criar_treino') }}">Treino</a></li>
+            <li><a href="{{ url_for('evolucao') }}">Evolução</a></li>
+            <li><a href="{{ url_for('desafios') }}">Desafios</a></li>
+            <li><a href="{{ url_for('profile') }}">Perfil</a></li>
+            <li><a href="{{ url_for('logout') }}"><i class="feather icon-log-out"></i></a></li>
+        </ul>
+        <ul class="ul-mobile">
+            <li><a href="{{ url_for('logout') }}"><i class="feather icon-home"></i></a></li>
+            <li><a href="{{ url_for('logout') }}"><i class="feather icon-log-out"></i></a></li>
+        </ul>
+    </div>
+</header>
+<body  class="body-desafios" style="padding-top: 3rem; padding-bottom: 3rem;">
+    <div class="desafio-x">
+        <h6>Desafio 20 dias</h6>
+    
+        <ul>
+            <p>Ações para cumprir o desafio:</p>
+            <br>
+            <li>Acordar antes das 08h</li>
+            <li>Exerc. mín 1h</li>
+            <li>Beber mín 3L de água</li>
+            <li>Cardio de 20 min 3x na semana</li>
+            <li>Seguir uma dieta adequada</li>
+            <li>Dormir mín 8h/noite</li>
+        </ul>
+        <p>
+            Adotar hábitos saudáveis como acordar antes das 08h, exercitar-se por no mínimo 1 hora, beber no mínimo 3 litros de água, fazer 20 minutos de cardio 3 vezes na semana, seguir uma dieta adequada e dormir pelo menos 8 horas por noite pode trazer inúmeros benefícios para o corpo. Esses hábitos promovem um melhor humor, aumento da produtividade, saúde cardiovascular, controle de peso, hidratação adequada e uma nutrição balanceada. Além disso, ajudam na recuperação física, na saúde mental e na regulação hormonal, contribuindo para uma melhora significativa na qualidade de vida.
+        </p>
+        </div>
+</body>
+<footer class="footer-desafios">
+    <h6 class="color-white">Fale com um de nossos profissionais</h5>
+        <div class="grid-profissionais">
+            <div class="profissional">
+                <h6>
+                    <a class="text-green" href="https://wa.me/5551998786274?text=Olá%20Julio%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20treinos." target="_blank">
+                    Julio Balestrin
+                    </a>
+                </h6>
+            </div>
+            <div class="profissional">
+                <h6>
+                    <a class="text-green" href="https://wa.me/5551998786274?text=Olá%20Renato%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20treinos." target="_blank">
+                    Renato Cariri
+                    </a>
+                </h6>
+            </div>
+            <div class="profissional">
+                <h6>
+                    <a class="text-green" href="https://wa.me/5551998786274?text=Olá%20Jorlan%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20treinos." target="_blank">
+                    Jorlan all day
+                    </a>
+                </h6>
+            </div>
+            <div class="profissional">
+                <h6>
+                    <a class="text-green" href="https://wa.me/5551998786274?text=Olá%20Paulo%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20treinos." target="_blank">
+                    Paulo Muzy
+                    </a>
+                </h6>
+            </div>
+        </div>
+</footer>
+</html>
