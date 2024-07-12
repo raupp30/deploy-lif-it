@@ -201,9 +201,50 @@ def desafio30d():
 def desafios():
     return render_template('desafios.html')
 
-@app.route('/evolucao')
+@app.route('/evolucao', methods=['GET', 'POST'])
 def evolucao():
-    return render_template('evolucao.html')
+    if 'email' not in session:
+        return redirect(url_for('login'))
+    else:
+        email = session['email']
+        cur = mysql.connection.cursor()
+        cur.execute("SELECT mes, biceps, panturilha, ombro, cintura FROM evolution_progress WHERE email = %s ORDER BY mes ASC", (email,))
+        data = cur.fetchall()
+        cur.close()
+
+        meses = []
+        biceps = []
+        panturilha = []
+        ombro = []
+        cintura = []
+
+        for row in data:
+            meses.append(row[0])
+            biceps.append(row[1])
+            panturilha.append(row[2])
+            ombro.append(row[3])
+            cintura.append(row[4])
+
+        return render_template('evolucao.html', meses=meses, biceps=biceps, panturilha=panturilha, ombro=ombro, cintura=cintura)
+
+@app.route('/salvar_medidas', methods=['POST'])
+def salvar_medidas():
+    if 'email' not in session:
+        return redirect(url_for('login'))
+    else:
+        email = session['email']
+        mes = request.form['mes']
+        biceps = request.form['biceps']
+        panturilha = request.form['panturilha']
+        ombro = request.form['ombro']
+        cintura = request.form['cintura']
+
+        cur = mysql.connection.cursor()
+        cur.execute("INSERT INTO evolution_progress (email, mes, biceps, panturilha, ombro, cintura) VALUES (%s, %s, %s, %s, %s, %s)", (email, mes, biceps, panturilha, ombro, cintura))
+        mysql.connection.commit()
+        cur.close()
+
+        return redirect(url_for('evolucao'))
 
 if __name__ == '__main__':
     app.run(debug=True)

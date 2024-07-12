@@ -36,15 +36,13 @@
     <div class="container-list-treino">
         {% block content %}
         <h6 style="text-align: center;">Seu Treino Selecionado</h6>
+        <br>
         {% for training in selected_trainings %}
 
             <div class="exercicio-especifico">
                 <h6>{{ training.name }}</h6>
                 <p>{{ training.description }}</p>
-                <img class="img-ex"
-                    src="https://treinomestre.com.br/wp-content/uploads/2022/05/crucifixo-inclinado-780x470.jpg"
-                    alt="">
-                <!-- <img src="{{ training.image_url }}" alt="{{ training.name }}"> -->
+                <img class="img-ex" src="{{ training.image_url }}" alt="{{ training.name }}">
             </div>
         {% endfor %}
         {% endblock %}
