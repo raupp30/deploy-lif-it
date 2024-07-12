@@ -5,11 +5,12 @@ import bcrypt
 app = Flask(__name__)
 app.secret_key = '123'
 
-# Configurando o MySQL
-app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_HOST'] = 'monorail.proxy.rlwy.net'  # Remova ':' do final do host
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = ''
-app.config['MYSQL_DB'] = 'db_lsp'
+app.config['MYSQL_PASSWORD'] = 'SlVTyTIMXBsoPutXNcRqYeVbifUrMpgk'
+app.config['MYSQL_DB'] = 'railway'
+app.config['MYSQL_PORT'] = 57595  # Configurar a porta como um número inteiro, não como uma string
+
 mysql = MySQL(app)
 
 # Listas de treinos por categoria
