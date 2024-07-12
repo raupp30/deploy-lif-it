@@ -26,7 +26,7 @@
     </style>
 </head>
 
-<body>
+<body style="justify-content: normal;">
     <header>
         <div class="navbar">
             <ul class="ul-desktop">
@@ -44,7 +44,7 @@
         </div>
     </header>
 
-    <div class="container-evolucao">
+    <div class="container-evolucao" >
         <div class="topo-evolucao">
             <br>
             <br>
@@ -57,12 +57,12 @@
             <canvas id="myChart"></canvas>
         </div>
 
-        <div class="form-medidas">
-            <h4>Insira suas medidas mensais</h4>
+        <div class="form-medidas" style="padding-bottom: 1rem;">
+            <h6>Insira suas medidas mensais</h6>
             <form id="formMedidas" action="{{ url_for('salvar_medidas') }}" method="POST">
                 <div class="form-group">
                     <label for="mes">Mês:</label>
-                    <select id="mes" name="mes">
+                    <select class="input-medidas" id="mes" name="mes" style="    min-width: 57%">
                         <option value="1">Janeiro</option>
                         <option value="2">Fevereiro</option>
                         <option value="3">Março</option>
@@ -79,26 +79,26 @@
                 </div>
                 <div class="form-group">
                     <label for="biceps">Bíceps:</label>
-                    <input type="text" id="biceps" name="biceps" required>
+                    <input class="input-medidas" type="text" id="biceps" name="biceps" required>
                 </div>
                 <div class="form-group">
                     <label for="panturilha">Panturilha:</label>
-                    <input type="text" id="panturilha" name="panturilha" required>
+                    <input class="input-medidas" type="text" id="panturilha" name="panturilha" required>
                 </div>
                 <div class="form-group">
                     <label for="ombro">Ombro:</label>
-                    <input type="text" id="ombro" name="ombro" required>
+                    <input class="input-medidas" type="text" id="ombro" name="ombro" required>
                 </div>
                 <div class="form-group">
                     <label for="cintura">Cintura:</label>
-                    <input type="text" id="cintura" name="cintura" required>
+                    <input class="input-medidas" type="text" id="cintura" name="cintura" required>
                 </div>
-                <button type="submit">Salvar</button>
+                <button class="btn-cereja" type="submit" style="margin: 0 auto;">Salvar</button>
             </form>
         </div>
     </div>
 
-    <footer style="position: fixed">
+    <footer >
         <h6 class="color-white">Fale com um de nossos profissionais</h6>
         <div class="grid-profissionais">
             <div class="profissional">
