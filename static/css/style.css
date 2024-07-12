@@ -631,6 +631,23 @@ footer {
     background-image: url(/static/imgs/profile.jpg);
 }
 
+.d7 {
+    background-image: url(/static/imgs/7.jpeg);
+}
+
+.d15 {
+    background-image: url(/static/imgs/15.jpeg);
+}
+
+.d20 {
+    background-image: url(/static/imgs/20.jpeg);
+}
+
+.d30 {
+    background-image: url(/static/imgs/30.jpeg);
+}
+
+
 .container-evolucao {
     align-items: center;
     justify-content: space-around;
